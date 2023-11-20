@@ -1,42 +1,364 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  margin: 0px;
+}
+
+.App {
   text-align: center;
+  max-width: 100vw;
+  min-height: 96vh;
+  background-color: #232323;
+  padding-bottom: 30px;
+  /* background-size: cover; */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+span {
+  font-size: 25px;
+  color: white;
+  margin-top: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.darkmode {
+  margin-top: 10px;
+  /* color:#61dafb; */
+  font-weight: bolder;
+  font-size: 12pt;
 }
 
-.card {
-  padding: 2em;
+.blueSpan {
+  color:#61dafb;
 }
 
-.read-the-docs {
-  color: #888;
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  color: white;
+}
+
+.whiteText {
+  color: white;
+}
+
+.lessMargin {
+  margin-top: -10px;
+}
+
+img {
+  height: 80%;
+}
+
+.blue, .orange, .purple, .green, .red, .yellow, .darkBlue, .darkOrange, .darkYellow, .darkGreen {
+  color:rgb(223, 237, 248);
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #61dafb;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.black {
+  color: black;
+}
+
+.grey {
+  color: lightgrey;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  padding-top: 25px;
+  gap: 1em;
+  grid-template-rows: 70px 70px 70px;
+  margin-bottom: 20px;
+}
+
+.fourGrid {
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: 70px 70px 70px 70px;
+}
+
+button {
+  margin-top: 17px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 30px;
+  margin-top: 5px;
+  border-radius: 15px;
+  background-color: #61dafb;
+  border-width: 0px;
+}
+
+a {
+  color:#61dafb;
+}
+
+.aDiv {
+  margin-top: 20px;
+  /* width: 190px;
+  height: 40px; */
+  /* background-color: #232323; */
+  /* border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.aDivLight {
+  /* background-color: rgb(102, 102, 102); */
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.gridBtn {
+  margin-top: 25px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color:#0ea5cf;
+}
+
+button:active {
+  scale:.9;
+  background-color: #61dafb;
+}
+
+h3 {
+  color:rgb(212, 221, 230);
+  margin-bottom: 5px;
+}
+
+.noStyleBtn {
+  background-color: rgba(255,255,255,0);
+}
+
+.noStyleBtn:hover {
+  background-color: rgba(255,255,255,0);
+}
+
+.noStyleBtn:active {
+  scale: 1;
+}
+
+.orange {
+  border: 3px solid #fbc26b;
+}
+
+.buttonOrange {
+  background-color: #fbc26b;
+}
+
+.buttonOrange:hover {
+  cursor: pointer;
+  background-color: #fd9e0e;
+}
+
+.buttonOrange:active {
+  scale: .9;
+  background-color: #fbc26b;
+}
+
+.orangeA {
+  color:#fbc26b;
+}
+
+.purple {
+  border: 3px solid #ff34ee;
+}
+
+.buttonPurple {
+  background-color: #ff34ee;
+}
+
+.buttonPurple:hover {
+  cursor: pointer;
+  background-color: #d31bd3;
+}
+
+.buttonPurple:active {
+  scale: .9;
+  background-color: #eb05eb;
+}
+
+.purpleA {
+  color:#ff34ee;
+}
+
+.green {
+  border: 3px solid #7fffb0;
+}
+
+.buttonGreen {
+  background-color: #7fffb0;
+}
+
+.buttonGreen:hover {
+  cursor: pointer;
+  background-color: #00e658;
+}
+
+.buttonGreen:active {
+  scale: .9;
+  background-color: #7fffb0;
+}
+
+.greenA {
+  color:#7fffb0;
+}
+
+.red {
+  border: 3px solid #f91616;
+}
+
+.buttonRed {
+  background-color: #f91616;
+  color: white;
+}
+
+.buttonRed:hover {
+  cursor: pointer;
+  background-color: #d00404;
+}
+
+.buttonRed:active {
+  scale: .9;
+  background-color: #f91616;
+}
+
+.redA {
+  color:#f91616;
+}
+
+.yellow {
+  border: 3px solid #ffff00;
+}
+
+.buttonYellow {
+  background-color: #fafa51;
+}
+
+.buttonYellow:hover {
+  cursor: pointer;
+  background-color: #e0d912;
+}
+
+.buttonYellow:active {
+  scale: .9;
+  background-color: #fafa51;
+}
+
+.yellowA {
+  color:#fafa51;
+}
+
+.darkBlue {
+  border: 3px solid darkblue;
+}
+
+.buttonDarkBlue {
+  background-color: darkblue;
+  color: white;
+}
+
+.buttonDarkBlue:hover {
+  cursor: pointer;
+  background-color: rgb(3, 3, 188);
+}
+
+.buttonDarkBlue:active {
+  scale: .9;
+  background-color: darkblue;
+}
+
+.darkBlueA {
+  color: darkblue;
+}
+
+.darkOrange {
+  border: 3px solid orange;
+}
+
+.buttonDarkOrange {
+  background-color: orange;
+  /* color: white */
+}
+
+.buttonDarkOrange:hover {
+  cursor: pointer;
+  background-color: rgb(255, 192, 74);
+}
+
+.buttonDarkOrange:active {
+  scale: .9;
+  background-color: orange;
+}
+
+.darkOrangeA {
+  color:orange;
+}
+
+.darkGreen {
+  border: 3px solid #007b2f;
+}
+
+.buttonDarkGreen {
+  background-color: #007b2f;
+  color: white
+}
+
+.buttonDarkGreen:hover {
+  cursor: pointer;
+  background-color: #01b948;
+}
+
+.buttonDarkGreen:active {
+  scale: .9;
+  background-color: #007b2f;
+}
+
+.darkGreenA {
+  color:#007b2f;
+}
+
+.darkYellow {
+  border: 3px solid #eded00;
+}
+
+.buttonDarkYellow {
+  background-color: #eded00;
+}
+
+.buttonDarkYellow:hover {
+  cursor: pointer;
+  background-color: #fefe98;
+}
+
+.buttonDarkYellow:active {
+  scale: .9;
+  background-color: #eded00;
+}
+
+.darkYellowA {
+  color:#eded00;
+}
+
+.lightMode {
+  color:rgb(20,20,20);
+  background-color: rgb(255, 255, 255);
 }
