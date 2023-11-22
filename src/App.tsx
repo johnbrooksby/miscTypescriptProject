@@ -16,7 +16,7 @@ function App() {
     lightMode = "light";
   }
   const [player, setPlayer] = useState(true);
-  const [squares, setSquares] = useState(new Array(9).fill(""));
+  const [squares, setSquares] = useState(new Array(9).fill(" "));
   const [theme] = useState([
     "blue",
     "orange",
@@ -33,10 +33,10 @@ function App() {
   ]);
 
   if (localStorage.getItem("color reference")) {
-    a = localStorage.getItem("color reference");
+    a = Number(localStorage.getItem("color reference"));
   }
   const [color, setColor] = useState(theme[a]);
-  localStorage.setItem("color reference", a);
+  localStorage.setItem("color reference", String(a));
 
   const winner = [
     player ? "X's turn" : "O's turn",
@@ -58,7 +58,7 @@ function App() {
     msg = 0;
   };
 
-  const calculateWinner = (Arr) => {
+  const calculateWinner = (Arr: []) => {
     let lines = !fourByFour
       ? [
           [0, 1, 2],
@@ -125,7 +125,7 @@ function App() {
     return;
   };
 
-  let colorTheme;
+  let colorTheme: string;
   color === "orange"
     ? (colorTheme = "buttonOrange")
     : color === "purple"
@@ -159,7 +159,7 @@ function App() {
     }
     setColor(theme[a])
     localStorage.setItem("light mode", lightMode);
-    localStorage.setItem("color reference", a);
+    localStorage.setItem("color reference", String(a));
   };
 
   return (

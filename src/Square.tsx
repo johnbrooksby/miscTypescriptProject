@@ -1,6 +1,20 @@
 
+interface Props {
 
-const Square = (props:any) => {
+  key: number,
+  lightMode: string,
+  setSquares: () => {},
+  index: number,
+  squareValue: number,
+  squares: [],
+  player: boolean,
+  setPlayer: () => {},
+  gameOver: boolean,
+  calculateWinner: () => {},
+  color: any,
+}
+
+const Square = (props: Props) => {
   const handleClick = () => {
       if (!props.squareValue && !props.gameOver) {
         if (props.player) {
