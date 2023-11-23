@@ -3,14 +3,14 @@ interface Props {
 
   key: number,
   lightMode: string,
-  setSquares: () => {},
+  setSquares: (prev: string[]) => {},
   index: number,
   squareValue: number,
-  squares: [],
+  squares: string[],
   player: boolean,
-  setPlayer: () => {},
+  setPlayer: (p: boolean) => {},
   gameOver: boolean,
-  calculateWinner: () => {},
+  calculateWinner: (arg: string[]) => {},
   color: any,
 }
 

@@ -15,9 +15,9 @@ function App() {
   if (localStorage.getItem("light mode") === "light") {
     lightMode = "light";
   }
-  const [player, setPlayer] = useState(true);
-  const [squares, setSquares] = useState(new Array(9).fill(" "));
-  const [theme] = useState([
+  const [player, setPlayer] = useState<boolean>(true);
+  const [squares, setSquares] = useState<string[]>(new Array(9).fill(" "));
+  const [theme] = useState<string[]>([
     "blue",
     "orange",
     "purple",
@@ -35,10 +35,10 @@ function App() {
   if (localStorage.getItem("color reference")) {
     a = Number(localStorage.getItem("color reference"));
   }
-  const [color, setColor] = useState(theme[a]);
+  const [color, setColor] = useState<string>(theme[a]);
   localStorage.setItem("color reference", String(a));
 
-  const winner = [
+  const winner: string[] = [
     player ? "X's turn" : "O's turn",
     "X Wins",
     "O Wins",
@@ -192,7 +192,6 @@ function App() {
         {squares.map((value, index) => {
           return (
             <Square
-              // className={lightMode === "light" ? "black" : "grey"}
               key={index}
               lightMode={lightMode}
               setSquares={setSquares}
