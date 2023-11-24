@@ -26,9 +26,9 @@ function App() {
     "yellow",
     "darkBlue",
     "darkOrange",
-    "purple",
+    "purple2",
     "darkGreen",
-    "red",
+    "red2",
     "darkYellow",
   ]);
 
@@ -58,7 +58,7 @@ function App() {
     msg = 0;
   };
 
-  const calculateWinner = (Arr: []) => {
+  const calculateWinner = (Arr: string[]) => {
     let lines = !fourByFour
       ? [
           [0, 1, 2],
@@ -142,6 +142,10 @@ function App() {
     ? (colorTheme = "buttonDarkGreen")
     : color === "darkOrange"
     ? (colorTheme = "buttonDarkOrange")
+    : color === "red2"
+    ? (colorTheme = "buttonRed2")
+    : color === "purple2"
+    ? (colorTheme = "buttonPurple2")
     : color === "darkYellow"
     ? (colorTheme = "buttonDarkYellow")
     : (colorTheme = "themeBtn");
@@ -234,7 +238,7 @@ function App() {
             className="noStyleBtn"
             onClick={() => {
               setColor(theme[a]);
-              localStorage.setItem("color reference", a);
+              localStorage.setItem("color reference", String(a));
             }}
           >
             <span
@@ -254,9 +258,9 @@ function App() {
               an
             </span>
             <span
-              className="purpleA"
+              className={lightMode === "light" ? "purpleA" : "purpleA2"}
               onClick={() => {
-                a = 2;
+                a = lightMode === "light" ? 8 : 2;
               }}
             >
               ge
@@ -271,10 +275,10 @@ function App() {
               Co
             </span>
             <span
-              className="redA"
-              onClick={() => {
-                a = 4;
-              }}
+               className={lightMode === "light" ? "redA" : "redA2"}
+               onClick={() => {
+                 a = lightMode === "light" ? 10 : 4;
+               }}
             >
               lo
             </span>

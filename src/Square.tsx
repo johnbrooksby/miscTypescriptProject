@@ -1,16 +1,17 @@
+import React from "react"
 
 interface Props {
 
   key: number,
   lightMode: string,
-  setSquares: (prev: string[]) => {},
+  setSquares: React.Dispatch<React.SetStateAction<string[]>>,
   index: number,
-  squareValue: number,
+  squareValue: string,
   squares: string[],
   player: boolean,
-  setPlayer: (p: boolean) => {},
+  setPlayer: React.Dispatch<React.SetStateAction<boolean>>,
   gameOver: boolean,
-  calculateWinner: (arg: string[]) => {},
+  calculateWinner: (Arr: string[])=>unknown,
   color: any,
 }
 
